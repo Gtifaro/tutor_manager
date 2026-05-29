@@ -1,8 +1,9 @@
 const express = require("express")
+const cors = require("cors")
 const app = express()
 const connectDB = require("./config/database")
 app.use(express.json())
-
+app.use(cors())
 connectDB()
 
 const classRouter = require("./view/class.router")
