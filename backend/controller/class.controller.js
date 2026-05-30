@@ -1,9 +1,9 @@
 const classModel = require("../model/class.model");
-let classlist = [];
+
 exports.getAll = async (req, res) => {
   try {
     let data = await classModel.find();
-    res.json({ data: data });
+    res.json(data);
   } catch (error) {
     console.log(error.message)
     return res.status(500).json({message: "Error del servidor"});

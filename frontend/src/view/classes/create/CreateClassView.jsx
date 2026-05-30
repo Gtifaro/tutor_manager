@@ -1,8 +1,11 @@
+import { useCreateClass } from "../../../controller/useCreateClass";
+
 export function CreateClassView() {
-  const handleSubmit = (e) => {
+  const { loading, handleCreate } = useCreateClass();
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(e.target));
-    console.log(data);
+    handleCreate(data);
   };
 
   return (
@@ -13,7 +16,9 @@ export function CreateClassView() {
           Test:
           <input type="text" name="test" placeholder="M1l" />
         </label>
-        <button type="submit">Crear</button>
+        <button disabled={loading} type="submit">
+          {loading ? "Creando..." : "Crear"}
+        </button>
       </form>
     </>
   );
