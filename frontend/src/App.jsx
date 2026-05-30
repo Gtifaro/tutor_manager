@@ -5,9 +5,7 @@ import { ClassList } from "./components/classList";
 function App() {
   const { classes, loading } = useClasses();
 
-  return (
-    <>{loading ? <p>Cargando clases...</p> : <ClassList classes={classes} />}</>
-  );
+  return <ClassList classes={classes} loading={loading} />;
 }
 
 export default App;

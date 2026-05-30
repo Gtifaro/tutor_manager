@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchClasses } from "../model/classesModel";
-export function UseClasses() {
+export function useClasses() {
   const [classes, setClasses] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {

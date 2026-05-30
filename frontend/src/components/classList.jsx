@@ -1,4 +1,5 @@
-export function ClassList({ classes }) {
+export function ClassList({ classes, loading }) {
+  if (loading) return <p>Cargando clases...</p>;
   return (
     <ul>
       {classes &&
