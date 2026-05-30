@@ -1,11 +1,20 @@
 import "./App.css";
-import { useClasses } from "./controller/useClasses";
-import { ClassList } from "./components/classList";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+import { ClassView } from "./view/classes/classView";
+import { EditClassView } from "./view/classes/edit/EditClassView";
+import { CreateClassView } from "./view/classes/create/CreateClassView";
 
 function App() {
-  const { classes, loading } = useClasses();
 
-  return <ClassList classes={classes} loading={loading} />;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/classes" element={<ClassView />} />
+        <Route path="/classes/edit/:id" element={<EditClassView />} />
+        <Route path="/classes/create" element={<CreateClassView />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
