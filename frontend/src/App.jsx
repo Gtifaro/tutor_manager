@@ -1,25 +1,12 @@
-import { useEffect, useState } from "react";
 import "./App.css";
+import { useClasses } from "./controller/useClasses";
+import { ClassList } from "./components/classList";
 
 function App() {
-  const [classes, setClasses] = useState([]);
-
-  useEffect(() => {
-    console.log("Hola mundo");
-    fetch("http://127.0.0.1:3000/classes")
-      .then((result) => result.json())
-      .then((data) => setClasses(data.data));
-  }, []);
+  const { classes, loading } = useClasses();
 
   return (
-    <>
-      <ul>
-        {classes &&
-          classes.map((c) => {
-            return <li key={c._id}>{c.test}</li>;
-          })}
-      </ul>
-    </>
+    <>{loading ? <p>Cargando clases...</p> : <ClassList classes={classes} />}</>
   );
 }
 
