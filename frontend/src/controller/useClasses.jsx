@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import { fetchClasses } from "../model/classesModel";
+import { getClasses } from "../model/classesModel";
 export function useClasses() {
   const [classes, setClasses] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    async function getClasses() {
+    async function handleGetClasses() {
       setLoading(true);
       try {
-        const result = await fetchClasses();
+        const result = await getClasses();
         setClasses(result);
       } catch (error) {
         console.error("Error al obtener las clases:", error);
@@ -15,7 +15,7 @@ export function useClasses() {
         setLoading(false);
       }
     }
-    getClasses();
+    handleGetClasses();
   }, []);
 
   return { classes, setClasses, loading };

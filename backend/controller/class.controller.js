@@ -10,6 +10,16 @@ exports.getAll = async (req, res) => {
   }
 };
 
+exports.getById = async (req, res) => {
+  try {
+    let data = await classModel.findById(req.params.id);
+    res.json(data);
+  } catch (error) {
+    console.log(error.message)
+    return res.status(500).json({message: "Error del servidor"});
+  }
+};
+
 exports.create = async (req, res) => {
   try {
     let data = await classModel.create(req.body);
@@ -23,7 +33,7 @@ exports.create = async (req, res) => {
 exports.update = async (req, res) => {
   try {
     let data = await classModel.findByIdAndUpdate(req.params.id, req.body);
-    return res.status(204).json({message: "Clase actualizada con éxito"});
+    return res.json({message: "Clase actualizada con éxito"});
   } catch (error) {
     console.log(error.message)
     return res.status(500).json({message: "Error del servidor"});

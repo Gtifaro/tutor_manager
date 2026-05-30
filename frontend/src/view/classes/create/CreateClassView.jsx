@@ -2,7 +2,7 @@ import { useCreateClass } from "../../../controller/useCreateClass";
 
 export function CreateClassView() {
   const { loading, handleCreate } = useCreateClass();
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(e.target));
     handleCreate(data);

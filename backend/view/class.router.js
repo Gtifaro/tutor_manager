@@ -3,6 +3,7 @@ const router = express.Router()
 const classController = require("../controller/class.controller")
 
 router.get("/", classController.getAll)
+router.get("/:id", classController.getById)
 router.post("/", classController.create)
 router.put("/:id", classController.update)
 router.delete("/:id", classController.delete)
