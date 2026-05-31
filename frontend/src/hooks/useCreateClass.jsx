@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { createClass } from "../model/classesModel";
+import { createClass } from "../services/classServices";
 import { useNavigate } from "react-router-dom";
 
 export function useCreateClass() {

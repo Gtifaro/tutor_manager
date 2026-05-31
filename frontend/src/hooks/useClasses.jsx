@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getClasses } from "../model/classesModel";
+import { getClasses } from "../services/classServices";
 export function useClasses() {
   const [classes, setClasses] = useState([]);
   const [loading, setLoading] = useState(true);

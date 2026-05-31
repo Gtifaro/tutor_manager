@@ -1,23 +1,23 @@
-import { useEditClass } from "../../../controller/useEditClass";
+import { useCreateClass } from "../../../hooks/useCreateClass";
 
-export function EditClassView() {
-  const { loading, oldData, handleEdit } = useEditClass();
+export function CreateClassView() {
+  const { loading, handleCreate } = useCreateClass();
   const handleSubmit = (e) => {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(e.target));
-    handleEdit(data);
+    handleCreate(data);
   };
 
   return (
     <>
-      <h1>Edit Class</h1>
+      <h1>Crear clase</h1>
       <form onSubmit={handleSubmit}>
         <label>
           Test:
-          <input name="test" placeholder={oldData?.test || ""} />
+          <input type="text" name="test" placeholder="M1l" />
         </label>
         <button disabled={loading} type="submit">
-          {loading ? "Guardando..." : "Editar"}
+          {loading ? "Creando..." : "Crear"}
         </button>
       </form>
     </>

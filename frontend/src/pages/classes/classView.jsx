@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useClasses } from "../../controller/useClasses";
+import { useClasses } from "../../hooks/useClasses";
 
 export function ClassView() {
   const { classes, loading } = useClasses();

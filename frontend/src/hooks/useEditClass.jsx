@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { editClass, getClassById } from "../model/classesModel";
+import { editClass, getClassById } from "../services/classServices";
 import { useNavigate, useParams } from "react-router-dom";
 
 export function useEditClass() {
