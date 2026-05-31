@@ -3,6 +3,7 @@ import { getClasses, deleteClass } from "../services/classServices";
 export function useClasses() {
   const [classes, setClasses] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [deleteLoading, setDeleteLoading] = useState(false);
   useEffect(() => {
     async function handleGetClasses() {
       setLoading(true);
@@ -20,15 +21,15 @@ export function useClasses() {
 
   const handleDelete = async (id) => {
     try {
-      setLoading(true);
+      setDeleteLoading(true);
       await deleteClass(id);
-      setClasses(classes.filter((c) => c._id !== id));
+      setClasses(prev => prev.filter((c) => c._id !== id));
     } catch (error) {
       console.error("Error al eliminar la clase:", error);
     } finally {
-      setLoading(false);
+      setDeleteLoading(false);
     }
   };
 
-  return { classes, loading, handleDelete };
+  return { classes, loading, handleDelete, deleteLoading };
 }

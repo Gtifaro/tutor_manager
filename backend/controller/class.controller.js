@@ -43,7 +43,7 @@ exports.update = async (req, res) => {
 exports.delete = async (req, res) => {
   try {
     let data = await classModel.findByIdAndDelete(req.params.id);
-    return res.status(204).json({message: "Clase eliminada con éxito"});;
+    return res.status(204).end();
   } catch (error) {
     console.log(error.message)
     return res.status(500).json({message: "Error del servidor"});
