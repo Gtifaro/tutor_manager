@@ -29,3 +29,10 @@ export async function getClassById(id) {
   if (!response.ok) throw new Error("Error getting class");
   return response.json();
 }
+
+export async function deleteClass(id) {
+  const response = await fetch(`http://localhost:3000/classes/${id}`, {
+    method: "DELETE",
+  });
+  if (!response.ok) throw new Error("Error deleting class");
+}

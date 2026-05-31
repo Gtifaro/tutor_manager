@@ -1,8 +1,8 @@
 import "./App.css";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-import { ClassView } from "./pages/classes/classView";
-import { EditClassView } from "./pages/classes/edit/EditClassView";
-import { CreateClassView } from "./pages/classes/create/CreateClassView";
+import ClassView from "./pages/classes";
+import EditClassView from "./pages/classes/edit";
+import CreateClassView from "./pages/classes/create";
 
 function App() {
 

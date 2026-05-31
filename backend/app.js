@@ -6,7 +6,7 @@ app.use(express.json())
 app.use(cors())
 connectDB()
 
-const classRouter = require("./pages/class.router")
+const classRouter = require("./view/class.router")
 app.use("/classes", classRouter)
 
 app.listen(3000, () => {

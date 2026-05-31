@@ -1,6 +1,6 @@
 import { useEditClass } from "../../../hooks/useEditClass";
 
-export function EditClassView() {
+export default function EditClassView() {
   const { loading, oldData, handleEdit } = useEditClass();
   const handleSubmit = (e) => {
     e.preventDefault();

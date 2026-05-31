@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getClasses } from "../services/classServices";
+import { getClasses, deleteClass } from "../services/classServices";
 export function useClasses() {
   const [classes, setClasses] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -18,5 +18,17 @@ export function useClasses() {
     handleGetClasses();
   }, []);
 
-  return { classes, setClasses, loading };
+  const handleDelete = async (id) => {
+    try {
+      setLoading(true);
+      await deleteClass(id);
+      setClasses(classes.filter((c) => c._id !== id));
+    } catch (error) {
+      console.error("Error al eliminar la clase:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return { classes, loading, handleDelete };
 }

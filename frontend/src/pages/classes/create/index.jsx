@@ -1,6 +1,6 @@
 import { useCreateClass } from "../../../hooks/useCreateClass";
 
-export function CreateClassView() {
+export default function CreateClassView() {
   const { loading, handleCreate } = useCreateClass();
   const handleSubmit = (e) => {
     e.preventDefault();
