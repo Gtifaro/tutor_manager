@@ -5,15 +5,24 @@ export default function ClassView() {
   const { classes, handleDelete, loading, deleteLoading } = useClasses();
   if (loading) return <p>Cargando clases...</p>;
   return (
-    <>
-      <Link to="/classes/create">Crear nueva clase</Link>
+    <div className="classView">
+      <Link to="/classes/create" className="classView__createbtn">
+        Crear Nueva
+      </Link>
       {classes?.length > 0 ? (
-        <ul>
+        <ul className="classView__classlist">
           {classes.map((c) => {
             return (
               <li key={c._id}>
-                {c.test} <Link to={`/classes/edit/${c._id}`}>Editar</Link>{" "}
+                {c.test}{" "}
+                <Link
+                  className="classView__editbtn"
+                  to={`/classes/edit/${c._id}`}
+                >
+                  Editar
+                </Link>
                 <button
+                  className="classView__deletebtn"
                   onClick={() => handleDelete(c._id)}
                   disabled={deleteLoading}
                 >
@@ -26,6 +35,6 @@ export default function ClassView() {
       ) : (
         <p>No hay clases disponibles</p>
       )}
-    </>
+    </div>
   );
 }
