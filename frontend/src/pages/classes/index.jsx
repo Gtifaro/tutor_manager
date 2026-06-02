@@ -2,12 +2,16 @@ import { Link } from "react-router-dom";
 import { useClasses } from "../../hooks/useClasses";
 
 export default function ClassView() {
-  const { classes, handleDelete, loading, deleteLoading } = useClasses();
+  const { classes, handleDelete, loading, deleteLoading, refreshClasses } = useClasses();
+
   return (
     <div className="classView">
       <Link to="/classes/create" className={"classView__createbtn" + (loading ? " disabledbtn" : "")} disabled={loading}>
         Crear Nueva
       </Link>
+      <button className={"classView__refreshbtn" + (loading ? " disabledbtn" : "")} disabled={loading} onClick={refreshClasses}>
+        Recargar datos
+      </button>
       {classes?.length > 0 ? (
         <ul className="classView__classlist">
           {classes.map((c) => {
