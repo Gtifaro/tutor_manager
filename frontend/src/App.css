@@ -92,3 +92,26 @@
   pointer-events: none;
   opacity: 0.6;
 }
+
+
+/* Navbar styles */
+.navbar_container {
+  background-color: #303030;
+  padding: 1rem;
+}
+
+.navbar_list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar_btn {
+  text-decoration: none;
+  color: white;
+  background-color: cornflowerblue;
+  padding: 0.25rem 1rem;
+  border-radius: 10px;
+}

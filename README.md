@@ -1,11 +1,11 @@
 TODO:
 - Add styles to all views
-- Add loading components for every view and part of screen
+- Add loading components for every view and part of screen ✅
 - Add Data like date, lesson and group for each class
 - CRUD GRUPOS
 - NAVBAR
-- Almacenar datos en local antes de irse a el backend, se hace la priera vez que se carga la web, luego por botón o ondemand(websocket o similares)
-Linea de pensamiento registro de clases, feature 1 base
+- Almacenar datos en local antes de irse a el backend, se hace la primera vez que se carga la web, luego por botón
+Linea de pensamiento registro de clases, feature 1 base ✅
 
 Click a botón crear nueva clase
 crear la clase, que debe contener la info de la siguiente clase correspondiente a el grupo siguiente al último al que se le dió clase normal
