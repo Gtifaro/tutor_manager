@@ -1,11 +1,16 @@
 export async function createClass(data) {
-  const response = await fetch("http://localhost:3000/classes", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data),
-  });
-  if (!response.ok) throw new Error("Error creating class");
-  return response.json();
+  try {
+    const response = await fetch("http://localhost:3000/classes", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+    if (!response.ok) throw new Error("Error creating class");
+    return response.json();
+  } catch (error) {
+    console.error(error.message);
+    return false;
+  }
 }
 
 export async function editClass(id, data) {

@@ -7,8 +7,12 @@ export function useCreateClass() {
   const navigate = useNavigate();
   const handleCreate = async (data) => {
     setLoading(true);
+    let classes = JSON.parse(localStorage.getItem("classlist"));
     try {
-      await createClass(data);
+      let result = await createClass(data);
+      if(!result) return
+      classes.push(data);
+      localStorage.setItem("classlist", JSON.stringify(classes));
       navigate("/classes");
     } catch (error) {
       console.error(error.message);

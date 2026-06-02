@@ -3,28 +3,28 @@ import { useClasses } from "../../hooks/useClasses";
 
 export default function ClassView() {
   const { classes, handleDelete, loading, deleteLoading } = useClasses();
-  if (loading) return <p>Cargando clases...</p>;
   return (
     <div className="classView">
-      <Link to="/classes/create" className="classView__createbtn">
+      <Link to="/classes/create" className={"classView__createbtn" + (loading ? " disabledbtn" : "")} disabled={loading}>
         Crear Nueva
       </Link>
       {classes?.length > 0 ? (
         <ul className="classView__classlist">
           {classes.map((c) => {
             return (
-              <li key={c._id}>
-                {c.test}{" "}
+              <li key={`class-${c._id}`}>
+                <span>{c.test}{" "}</span>
                 <Link
-                  className="classView__editbtn"
+                  className={"classView__editbtn" + (loading ? " disabledbtn" : "")}
                   to={`/classes/edit/${c._id}`}
+                  disabled={loading}
                 >
                   Editar
                 </Link>
                 <button
-                  className="classView__deletebtn"
+                  className={"classView__deletebtn" + (deleteLoading || loading ? " disabledbtn" : "")}
                   onClick={() => handleDelete(c._id)}
-                  disabled={deleteLoading}
+                  disabled={deleteLoading || loading}
                 >
                   {deleteLoading ? "Eliminando..." : "Eliminar"}
                 </button>
