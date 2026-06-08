@@ -5,6 +5,7 @@ export default function EditClassView() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(e.target));
+    data.number = parseInt(data.number)
     handleEdit(data);
   };
 
@@ -13,8 +14,20 @@ export default function EditClassView() {
       <h1>Edit Class</h1>
       <form onSubmit={handleSubmit}>
         <label>
-          Test:
-          <input name="test" placeholder={oldData?.test || ""} />
+          name:
+          <input type="text" name="name" defaultValue={oldData?.name || ""} />
+        </label>
+        <label>
+          number:
+          <input type="number" name="number" defaultValue={oldData?.number || ""} />
+        </label>
+        <label>
+          group:
+          <input type="text" name="group" defaultValue={oldData?.group || ""} />
+        </label>
+        <label>
+          date:
+          <input type="date" name="date" defaultValue={new Date(oldData?.date || "").toISOString().split("T")[0]} />
         </label>
         <button disabled={loading} type="submit">
           {loading ? "Guardando..." : "Editar"}

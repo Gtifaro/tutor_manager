@@ -17,7 +17,8 @@ export default function ClassView() {
           {classes.map((c) => {
             return (
               <li key={`class-${c._id}`}>
-                <span>{c.test}{" "}</span>
+                <span>{c.name} {c.number} </span>
+                <span>{c.group} {c.date} </span>
                 <Link
                   className={"classView__editbtn" + (loading ? " disabledbtn" : "")}
                   to={`/classes/edit/${c._id}`}
