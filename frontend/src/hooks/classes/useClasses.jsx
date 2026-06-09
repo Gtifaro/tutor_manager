@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getClasses, deleteClass } from "../services/classServices";
+import { getClasses, deleteClass } from "../../services/classServices";
 export function useClasses() {
   const [classes, setClasses] = useState(() => {
     let data = localStorage.getItem("classlist");

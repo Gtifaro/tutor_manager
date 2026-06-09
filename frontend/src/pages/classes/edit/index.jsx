@@ -1,4 +1,4 @@
-import { useEditClass } from "../../../hooks/useEditClass";
+import { useEditClass } from "../../../hooks/classes/useEditClass";
 
 export default function EditClassView() {
   const { loading, oldData, handleEdit } = useEditClass();

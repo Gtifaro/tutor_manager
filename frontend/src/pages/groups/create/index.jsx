@@ -1,7 +1,7 @@
-import { useCreateClass } from "../../../hooks/classes/useCreateClass";
+import { useCreateGroup } from "../../../hooks/groups/useCreateGroup";
 
-export default function CreateClassView() {
-  const { loading, handleCreate } = useCreateClass();
+export default function CreateGroupView() {
+  const { loading, handleCreate } = useCreateGroup();
   const handleSubmit = (e) => {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(e.target));
@@ -11,7 +11,7 @@ export default function CreateClassView() {
 
   return (
     <>
-      <h1>Crear clase</h1>
+      <h1>Crear grupo</h1>
       <form onSubmit={handleSubmit}>
         <label>
           name:

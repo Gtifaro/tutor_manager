@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
-import { editClass, getClassById } from "../services/classServices";
+import { editGroup, getGroupById } from "../../services/groupServices";
 import { useNavigate, useParams } from "react-router-dom";
 
-export function useEditClass() {
+export function useEditGroup() {
   const { id } = useParams();
   const [loading, setLoading] = useState(false);
   const [oldData, setOldData] = useState(() => {
-    let data = localStorage.getItem("classlist");
+    let data = localStorage.getItem("grouplist");
     if (data) {
       data = JSON.parse(data);
       data = data.find(d => d._id == id)
@@ -19,13 +19,13 @@ export function useEditClass() {
     if (!id) return;
     setLoading(true);
     try {
-      let result = await editClass(id, data);
-      if (!result) throw new Error("Error editing class");
-      let classlist = JSON.parse(localStorage.getItem("classlist"));
-      let idx = classlist.findIndex(c => c._id == id);
-      classlist[idx] = data;
-      localStorage.setItem("classlist", JSON.stringify(classlist));
-      navigate("/classes");
+      let result = await editGroup(id, data);
+      if (!result) throw new Error("Error editing group");
+      let grouplist = JSON.parse(localStorage.getItem("grouplist"));
+      let idx = grouplist.findIndex(c => c._id == id);
+      grouplist[idx] = data;
+      localStorage.setItem("grouplist", JSON.stringify(grouplist));
+      navigate("/groups");
     } catch (error) {
       console.error(error.message);
     }
@@ -33,18 +33,18 @@ export function useEditClass() {
   };
 
   useEffect(() => {
-    const handleGetClassById = async () => {
+    const handleGetGroupById = async () => {
       if (!id) return;
       setLoading(true);
       try {
-        const data = await getClassById(id);
+        const data = await getGroupById(id);
         setOldData(data);
       } catch (error) {
         console.error(error.message);
       }
       setLoading(false);
     };
-    handleGetClassById();
+    handleGetGroupById();
   }, [id]);
 
   return { loading, oldData, handleEdit };

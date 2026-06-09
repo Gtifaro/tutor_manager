@@ -7,7 +7,9 @@ app.use(cors())
 connectDB()
 
 const classRouter = require("./view/class.router")
+const groupRouter = require("./view/group.router")
 app.use("/classes", classRouter)
+app.use("/groups", groupRouter)
 
 app.listen(3000, () => {
     console.log("Server listening at http://localhost:3000/")

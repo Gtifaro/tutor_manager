@@ -1,19 +1,19 @@
 import { useState } from "react";
-import { createClass } from "../services/classServices";
+import { createGroup } from "../../services/groupServices";
 import { useNavigate } from "react-router-dom";
 
-export function useCreateClass() {
+export function useCreateGroup() {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const handleCreate = async (data) => {
     setLoading(true);
-    let classes = JSON.parse(localStorage.getItem("classlist"));
+    let groups = JSON.parse(localStorage.getItem("grouplist"));
     try {
-      let result = await createClass(data);
+      let result = await createGroup(data);
       if(!result) return
-      classes.push(data);
-      localStorage.setItem("classlist", JSON.stringify(classes));
-      navigate("/classes");
+      groups.push(data);
+      localStorage.setItem("grouplist", JSON.stringify(groups));
+      navigate("/groups");
     } catch (error) {
       console.error(error.message);
     }

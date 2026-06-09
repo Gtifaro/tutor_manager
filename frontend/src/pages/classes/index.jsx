@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useClasses } from "../../hooks/useClasses";
+import { useClasses } from "../../hooks/classes/useClasses";
 
 export default function ClassView() {
   const { classes, handleDelete, loading, deleteLoading, refreshClasses } = useClasses();
