@@ -7,7 +7,7 @@ export default function Navbar() {
         <li className="navbar_item">
           <Link className="navbar_btn" to="/classes">Classes</Link>
           <Link className="navbar_btn" to="/groups">Grupos</Link>
-          <Link className="navbar_btn" to="/idks">idks</Link>
+          <Link className="navbar_btn" to="/">Salary</Link>
         </li>
       </ul>
     </nav>
