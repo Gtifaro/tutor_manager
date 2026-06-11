@@ -1,4 +1,4 @@
-.classView {
+ /* .classView {
   padding: 1rem;
   font-family: system-ui;
   width: fit-content;
@@ -8,8 +8,8 @@
   background-color: #202020;
   margin: 2rem auto;
   border-radius: 10px;
-}
-
+} */
+/* 
 .classView__createbtn {
   background-color: aquamarine;
   border-radius: 10px;
@@ -23,9 +23,9 @@
   font-size: 1.5rem;
   width: 100%;
   box-sizing: border-box;
-}
+} */
 
-.classView__refreshbtn {
+/* .classView__refreshbtn {
   margin-top: .5rem;
   background-color: cornflowerblue;
   border-radius: 10px;
@@ -40,8 +40,8 @@
   width: 100%;
   box-sizing: border-box;
   cursor: pointer;
-}
-
+} */
+/* 
 .classView__classlist {
   justify-self: center;
   color: white;
@@ -51,8 +51,8 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-}
-
+} */
+/* 
 .classView__classlist li {
   display: flex;
   gap: 1rem;
@@ -62,22 +62,22 @@
   justify-content: end;
   text-align: left;
   min-width: 450px;
-}
-
+} */
+/* 
 .classView__classlist li span {
   width: 100%;
-}
+} */
 
-.classView__editbtn {
+/* .classView__editbtn {
   text-decoration: none;
   font-size: 1.25rem;
   color: white;
   background-color: cornflowerblue;
   padding: 0.25rem 1rem;
   border-radius: 10px;
-}
+} */
 
-.classView__deletebtn {
+/* .classView__deletebtn {
   text-decoration: none;
   font-size: 1.25rem;
   color: white;
@@ -86,32 +86,32 @@
   border-radius: 10px;
   border-style: none;
   cursor: pointer;
-}
+} */
 
-.disabledbtn {
+/* .disabledbtn {
   pointer-events: none;
   opacity: 0.6;
-}
+} */
 
 
 /* Navbar styles */
-.navbar_container {
+/* .navbar_container {
   background-color: #303030;
   padding: 1rem;
-}
-
+} */
+/* 
 .navbar_list {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   gap: 1rem;
-}
+} */
 
-.navbar_btn {
+/* .navbar_btn {
   text-decoration: none;
   color: white;
   background-color: cornflowerblue;
   padding: 0.25rem 1rem;
   border-radius: 10px;
-}
+}  */

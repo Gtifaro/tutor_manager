@@ -1,11 +1,10 @@
 import { useCreateClass } from "../../../hooks/classes/useCreateClass";
-
 export default function CreateClassView() {
   const { loading, handleCreate } = useCreateClass();
   const handleSubmit = (e) => {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(e.target));
-    data.number = parseInt(data.number)
+    data.number = parseInt(data.number);
     handleCreate(data);
   };
 

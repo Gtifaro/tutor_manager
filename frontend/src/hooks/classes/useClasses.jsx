@@ -13,8 +13,9 @@ export function useClasses() {
     setLoading(true);
     try {
       const result = await getClasses();
-      localStorage.setItem("classlist", JSON.stringify(result));
-      setClasses(result);
+      const sortedClasses = result.sort((a, b) => new Date(a.date) - new Date(b.date));
+      localStorage.setItem("classlist", JSON.stringify(sortedClasses));
+      setClasses(sortedClasses);
     } catch (error) {
       console.error("Error al obtener las clases:", error);
     } finally {
